@@ -18,13 +18,11 @@ function IndexPopup() {
       });
   }, []);
 
-
-
+  const apiKey = process.env.PLASMO_PUBLIC_SHIP_NAME;
+  
   return (
     <div className="flex items-center justify-center h-[500px] w-[500px]">
-      <FetchLocation ip={ipAddress} />
-      <p>{process.env.PLASMO_PUBLIC_SHIP_NAME}</p>
-      <p>{process.env.PLASMO_PUBLIC_SITE_URL}</p>
+      <FetchLocation ip={ipAddress} apiKey={apiKey}/>
     </div>
   )
 }

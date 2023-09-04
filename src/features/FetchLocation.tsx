@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import '../style.css';
 import LoadingComponent from "./LoadingComponent";
 
-export const FetchLocation = ({ ip }) => {
-  const apiKey = '1be08ad3207623';
+export const FetchLocation = ({ ip ,apiKey}) => {
   const [city, setCity] = useState<string | null>(localStorage.getItem('city') || null);
   const [country, setCountry] = useState<string | null>(localStorage.getItem('country') || null);
   const [loading, setLoading] = useState(false);
