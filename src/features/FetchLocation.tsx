@@ -42,12 +42,13 @@ export const FetchLocation = ({ ip ,apiKey}) => {
 
   return (
     <div className="">
-      <button
+      {!loading && (<button
         onClick={() => fetchGeolocation(ip)}
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-lg"
       >
         Get My Location
       </button>
+      )}
       {loading && (
         <div className="ml-4">
           <LoadingComponent />
@@ -55,13 +56,13 @@ export const FetchLocation = ({ ip ,apiKey}) => {
       )}
 
       {!loading && city && country && (
-        <div className="ml-4">
+        <div className="ml-4 mt-4">
           <h1 className="text-lg font-semibold">Your City: {city}</h1>
           <h1 className="text-lg font-semibold">Your Country: {country}</h1>
           {/* Button to clear local storage */}
           <button
             onClick={clearLocalStorage}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-lg"
+            className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out transform hover:scale-105 text-lg"
           >
             Clear Data
           </button>
